@@ -15,6 +15,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+}); 
 
-Route::resource('product', 'ProductController');
+Route::group(['prefix' => 'product'], function () {
+       
+    Route::resource('/', 'ProductController');
+
+    Route::get('/{$name}', 'ProductController@showByName');
+
+    Route::get('/active', 'ProductController@getByActive');
+    Route::get('/cheap', 'ProductController@getByCheaper');
+    Route::get('/expensive', 'ProductController@getByMoreExpensive');
+});
