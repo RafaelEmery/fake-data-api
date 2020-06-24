@@ -83,7 +83,7 @@ class ProductController extends Controller
     /**
      * Display the specified product by it's name.
      *
-     * @param  \App\Product  $product->name
+     * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
     public function showByName($name)
@@ -100,9 +100,11 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function getByActive()
+    public function getByAvailable()
     {
-        $products = Product::where('active', true)->get();
+        $products = Product::where('available', true)->get();
+
+        dd($products);
 
         // ManualErrorHandler::productFindValidator($products, 'There are no products in DataBase!');
 

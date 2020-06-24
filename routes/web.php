@@ -17,13 +17,19 @@ Route::get('/', function () {
     return view('welcome');
 }); 
 
+Route::resource('/product', 'ProductController');
+
 Route::group(['prefix' => 'product'], function () {
        
     Route::resource('/', 'ProductController');
 
-    Route::get('/{$name}', 'ProductController@showByName');
-
-    Route::get('/active', 'ProductController@getByActive');
+    Route::get('/{name}', 'ProductController@showByName');
+    Route::get('/available', 'ProductController@getByAvailable');
     Route::get('/cheap', 'ProductController@getByCheaper');
     Route::get('/expensive', 'ProductController@getByMoreExpensive');
+});
+
+Route::group(['prefix' => 'posts'], function () {
+    
+    Route::resource('/', 'PostController');
 });
