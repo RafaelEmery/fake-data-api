@@ -17,7 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 }); 
 
-Route::resource('/product', 'ProductController');
+// Route::resource('/product', 'ProductController');
+// Route::resource('/post', 'PostController'); 
+
+//Parece que o erro está no route group! Acontecendo nos dois grupos......
 
 Route::group(['prefix' => 'product'], function () {
        
@@ -31,5 +34,5 @@ Route::group(['prefix' => 'product'], function () {
 
 Route::group(['prefix' => 'posts'], function () {
     
-    Route::resource('/', 'PostController');
+    Route::resource('/', 'PostController'); 
 });

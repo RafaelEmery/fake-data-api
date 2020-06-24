@@ -10,7 +10,7 @@ $factory->define(Product::class, function (Faker $faker) {
         'name' => $faker->word(2, true),
         'description' => $faker->text(200),
         'value' => $faker->numberBetween(15, 1500),
-        'available' => $faker->boolean(50),
+        'available' => $faker->boolean(80),
         'image' => $faker->imageUrl(680, 540, 'cats')
     ];
 });
