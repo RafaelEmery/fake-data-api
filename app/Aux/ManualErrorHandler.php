@@ -1,25 +1,30 @@
 <?php
 
+namespace App\Aux;
+
 use App\Product;
 use App\Post;
 
 class ManualErrorHandler 
-{
-    public function productFindValitator(Product $product, $message)
+{      
+
+    public static function productFindValidator(Product $product, $message)
     {
-        if (!$product) {
-            return response()->json([
-                'message' => $message
-            ], 404);
-        }
+        // if (!$product) {
+        //     return response()->json([
+        //         'message' => $message
+        //     ], 404);
+        // }
+        // return null;
     }
 
-    public function postFindValidator(Post $post, $message)
+    public static function postFindValidator(Post $post, $message)
     {
         if (!$post) {
             return response()->json([
                 'message' => $message
             ], 404);
         }
+        return null;
     }
 }

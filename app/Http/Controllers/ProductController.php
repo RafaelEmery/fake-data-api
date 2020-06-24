@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Product;
-use App\Aux\ManualErrorHandler;
 use Illuminate\Http\Request;
+use App\Aux\ManualErrorHandler;
 
 class ProductController extends Controller
 {
@@ -17,24 +17,24 @@ class ProductController extends Controller
     {
         $products = Product::all();
 
-        ManualErrorHandler::productFindValidator($products, 'There are no products in DataBase!');
+        // ManualErrorHandler::productFindValidator($products, 'There are no products in DataBase!');
 
         return response()->json($products);
     }
 
-    /**
-     * Store a newly created product in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $data = $request->all();
-        $product = Product::create($create);
+    // /**
+    //  * Store a newly created product in storage.
+    //  *
+    //  * @param  \Illuminate\Http\Request  $request
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function store(Request $request)
+    // {
+    //     $data = $request->all();
+    //     $product = Product::create($create);
 
-        return response()->json($product);
-    }
+    //     return response()->json($product);
+    // }
 
     /**
      * Display the specified product by it's id.
@@ -51,34 +51,34 @@ class ProductController extends Controller
         return response()->json($product); 
     }
 
-    /**
-     * Update the specified product in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Product  $product->id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Product $product)
-    {
-        //
-    }
+    // /**
+    //  * Update the specified product in storage.
+    //  *
+    //  * @param  \Illuminate\Http\Request  $request
+    //  * @param  \App\Product  $product->id
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function update(Request $request, Product $product)
+    // {
+    //     //
+    // }
 
-    /**
-     * Remove the specified product from storage.
-     *
-     * @param  \App\Product  $product->id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $product = Product::find($id);
+    // /**
+    //  * Remove the specified product from storage.
+    //  *
+    //  * @param  \App\Product  $product->id
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function destroy($id)
+    // {
+    //     $product = Product::find($id);
 
-        $product->delete();
+    //     $product->delete();
         
-        return response()->json([
-            'message' => 'Product deleted!'
-        ], 200);
-    }
+    //     return response()->json([
+    //         'message' => 'Product deleted!'
+    //     ], 200);
+    // }
 
     /**
      * Display the specified product by it's name.
@@ -90,7 +90,7 @@ class ProductController extends Controller
     {
         $product = Product::where('name', $name)->get();
 
-        ManualErrorHandler::productFindValidator($products, 'Product not found!');
+        // ManualErrorHandler::productFindValidator($product, 'Product not found!');
 
         return response()->json($product); 
     }
@@ -104,7 +104,7 @@ class ProductController extends Controller
     {
         $products = Product::where('active', true)->get();
 
-        ManualErrorHandler::productFindValidator($products, 'There are no products in DataBase!');
+        // ManualErrorHandler::productFindValidator($products, 'There are no products in DataBase!');
 
         return response()->json($products);
     }
@@ -118,7 +118,7 @@ class ProductController extends Controller
     {
         $products = Product::orderBy('value', 'asc')->get();
 
-        ManualErrorHandler::productFindValidator($products, 'There are no products in DataBase!');
+        // ManualErrorHandler::productFindValidator($products, 'There are no products in DataBase!');
 
         return response()->json($products);
     }
@@ -132,7 +132,7 @@ class ProductController extends Controller
     {
         $products = Product::orderBy('value', 'desc')->get();
         
-        ManualErrorHandler::productFindValidator($products, 'There are no products in DataBase!');
+        // ManualErrorHandler::productFindValidator($products, 'There are no products in DataBase!');
 
         return response()->json($products);
     }
