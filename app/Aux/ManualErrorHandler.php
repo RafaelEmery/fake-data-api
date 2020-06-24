@@ -1,6 +1,7 @@
 <?php
 
 use App\Product;
+use App\Post;
 
 class ManualErrorHandler 
 {
@@ -13,5 +14,12 @@ class ManualErrorHandler
         }
     }
 
-
+    public function postFindValidator(Post $post, $message)
+    {
+        if (!$post) {
+            return response()->json([
+                'message' => $message
+            ], 404);
+        }
+    }
 }
