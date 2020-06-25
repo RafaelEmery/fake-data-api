@@ -48,6 +48,6 @@ Route::group(['prefix' => 'blog'], function () {
         Route::get('/', 'CommentController@index');
 
         Route::get('/{id}', 'CommentController@show');
-        Route::get('/{id}/post', 'CommentController@getPostByComment');
+        Route::get('/{post_id}/post', 'CommentController@getPostByComment');
     });
 });

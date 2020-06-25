@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of all posts.
      *
      * @return \Illuminate\Http\Response
      */
@@ -20,7 +20,7 @@ class PostController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified post.
      *
      * @param  \App\Post  $post->id
      * @return \Illuminate\Http\Response
@@ -32,6 +32,11 @@ class PostController extends Controller
         return response()->json($post);
     }
 
+    /**
+     * Display a listing of comments for the specified post.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function getCommentsByPost($post_id)
     {
         $post = Post::find($post_id);

@@ -8,78 +8,41 @@ use Illuminate\Http\Request;
 class CommentController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of comments.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $comments = Comment::all();
+
+        return response()->json($comments);
     }
 
+    
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
+     * Display the specified comment.
      *
      * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function show(Comment $comment)
+    public function show($id)
     {
-        //
+        $comment = Comment::find($id);
+
+        return response()->json($comment);
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Display a listing of post for the specified comment.
      *
-     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Comment $comment)
+    public function getPostByComment($comment_id)
     {
-        //
-    }
+        $comment = Comment::find($comment_id);
+        $post = $comment->post;
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Comment  $comment
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Comment $comment)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Comment  $comment
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Comment $comment)
-    {
-        //
+        return response()->json($post);
     }
 }
