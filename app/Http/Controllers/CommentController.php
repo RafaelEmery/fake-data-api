@@ -59,7 +59,7 @@ class CommentController extends Controller
                 'message' => "Dude, this comment doesn't exist here."
             ], 404);
         }
-
+        
         $post = $comment->post;
 
         return response()->json($post);

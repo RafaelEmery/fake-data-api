@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Comment;
+use App\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +32,10 @@ Route::group(['prefix' => 'shop'], function () {
 
 Route::group(['prefix' => 'blog'], function () {
     
+    //Must find a way to return a json with all the posts and comments
+    //In a single GET request...
+    //May be '/' on BlogController@allPostsComments
+
     Route::group(['prefix' => 'post'], function () {
         Route::get('/', 'PostController@index');
         
