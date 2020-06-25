@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Schema;
 use App\Post;
 
 class PostsTableSeeder extends Seeder
@@ -11,8 +12,10 @@ class PostsTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
+    {   
+        Schema::disableForeignKeyConstraints();
         Post::truncate();
+        Schema::enableForeignKeyConstraints();
 
         factory(Post::class, 30)->create();
     }

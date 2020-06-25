@@ -9,6 +9,6 @@ $factory->define(Comment::class, function (Faker $faker) {
     return [
         'post_id' => $faker->numberBetween(1, 30),
         'author' => $faker->firstName(null),
-        'content' => paragraph(4, true),
+        'content' => $faker->paragraph(4, true),
     ];
 });
