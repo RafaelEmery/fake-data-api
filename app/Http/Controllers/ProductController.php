@@ -17,6 +17,12 @@ class ProductController extends Controller
     {
         $products = Product::all();
 
+        if ($products->isEmpty()) {
+            return response()->json([
+                'message' => "Dammit! The product DB is empty... Life goes on."
+            ], 404);
+        }
+
         return response()->json($products);
     }
 
@@ -30,6 +36,12 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
 
+        if (!$product) {
+            return response()->json([
+                'message' => "Dude, this product doesn't exist here."
+            ], 404);
+        }
+
         return response()->json($product); 
     }
 
@@ -41,6 +53,12 @@ class ProductController extends Controller
     public function getByAvailable()
     {
         $products = Product::where('available', true)->get();
+
+        if ($products->isEmpty()) {
+            return response()->json([
+                'message' => "Dammit! The product DB is empty... Life goes on."
+            ], 404);
+        }
 
         return response()->json($products);
     }
@@ -54,6 +72,12 @@ class ProductController extends Controller
     {
         $products = Product::orderBy('value', 'asc')->get();
 
+        if ($products->isEmpty()) {
+            return response()->json([
+                'message' => "Dammit! The product DB is empty... Life goes on."
+            ], 404);
+        }
+
         return response()->json($products);
     }
 
@@ -66,6 +90,12 @@ class ProductController extends Controller
     {
         $products = Product::orderBy('value', 'desc')->get();
 
+        if ($products->isEmpty()) {
+            return response()->json([
+                'message' => "Dammit! The product DB is empty... Life goes on."
+            ], 404);
+        }
+
         return response()->json($products);
     }
 
@@ -77,6 +107,12 @@ class ProductController extends Controller
     public function getBySoldQuantity()
     {
         $products = Product::orderBy('sold_quantity', 'desc')->get();
+
+        if ($products->isEmpty()) {
+            return response()->json([
+                'message' => "Dammit! The product DB is empty... Life goes on."
+            ], 404);
+        }
 
         return response()->json($products);
     }

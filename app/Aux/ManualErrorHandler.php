@@ -7,14 +7,13 @@ use App\Post;
 
 class ManualErrorHandler 
 {      
-    public static function productFindValidator(Product $product, $message)
+    public static function getProductsValidator($products)
     {
-        if (!$product) {
+        if (!isset($products)) {
             return response()->json([
-                'message' => $message
+                'message' => "Dammit! The product DB is empty... Life goes on."
             ], 404);
         }
-        return null;
     }
 
     public static function postFindValidator(Post $post, $message)
