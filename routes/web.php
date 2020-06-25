@@ -42,7 +42,6 @@ Route::group(['prefix' => 'blog'], function () {
         
         Route::get('/{id}', 'PostController@show');
         Route::get('/{post_id}/comment', 'PostController@getCommentsByPost');
-        Route::get('/{post_id}/comment/{id}', 'PostController@getOneCommentByPost');
     });
     
     Route::group(['prefix' => 'comment'], function () {

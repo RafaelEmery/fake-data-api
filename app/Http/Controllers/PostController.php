@@ -34,11 +34,9 @@ class PostController extends Controller
 
     public function getCommentsByPost($post_id)
     {
-        dd("Teste commentsByPost ".", post_id -> ".$post_id);
-    }
+        $post = Post::find($post_id);
+        $comments = $post->comments;
 
-    public function getOneCommentByPost($post_id, $comment_id)
-    {
-        dd("Teste oneCommentByPost");
+        return response()->json($comments);
     }
 }
