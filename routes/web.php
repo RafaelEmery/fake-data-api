@@ -28,9 +28,6 @@ Route::group(['prefix' => 'product'], function () {
     Route::get('/{id}', 'ProductController@show');
 });
 
-
-
-
-
-
-Route::resource('/post', 'PostController'); 
+Route::group(['prefix' => 'blog'], function () {
+    Route::get('/', 'PostController@index');
+});

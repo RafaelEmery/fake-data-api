@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
-use App\Aux\ManualErrorHandler;
+// use App\Aux\ManualErrorHandler;
 
 class ProductController extends Controller
 {
