@@ -14,17 +14,31 @@ class PostController extends Controller
      */
     public function index()
     {
-        return 'teste';
+        $posts = Post::all();
+
+        return response()->json($posts);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Post  $post
+     * @param  \App\Post  $post->id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        $post = Post::find($id);
+
+        return response()->json($post);
+    }
+
+    public function getCommentsByPost($post_id)
+    {
+        dd("Teste commentsByPost ".", post_id -> ".$post_id);
+    }
+
+    public function getOneCommentByPost($post_id, $comment_id)
+    {
+        dd("Teste oneCommentByPost");
     }
 }
