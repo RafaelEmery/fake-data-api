@@ -17,22 +17,20 @@ Route::get('/', function () {
     return view('welcome');
 }); 
 
-// Route::resource('/product', 'ProductController');
-// Route::resource('/post', 'PostController'); 
-
-//Parece que o erro está no route group! Acontecendo nos dois grupos......
-
 Route::group(['prefix' => 'product'], function () {
-       
-    Route::resource('/', 'ProductController');
-
-    Route::get('/{name}', 'ProductController@showByName');
-    Route::get('/available', 'ProductController@getByAvailable');
-    Route::get('/cheap', 'ProductController@getByCheaper');
-    Route::get('/expensive', 'ProductController@getByMoreExpensive');
-});
-
-Route::group(['prefix' => 'posts'], function () {
+    Route::get('/', 'ProductController@index');
     
-    Route::resource('/', 'PostController'); 
+    Route::get('/available', 'ProductController@getByAvailable'); 
+    Route::get('/cheap', 'ProductController@getByCheaper'); 
+    Route::get('/expensive', 'ProductController@getByMoreExpensive'); 
+    Route::get('/sold', 'ProductController@getBySoldQuantity');
+
+    Route::get('/{id}', 'ProductController@show');
 });
+
+
+
+
+
+
+Route::resource('/post', 'PostController'); 

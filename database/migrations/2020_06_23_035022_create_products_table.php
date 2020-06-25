@@ -18,8 +18,10 @@ class CreateProductsTable extends Migration
 
             $table->string('name');
             $table->string('description')->nullable();
-            $table->string('value');
-            $table->boolean('available')->default(true);
+            $table->double('value');
+            $table->boolean('available');
+            $table->enum('payment_method', ['Cash', 'Credit Card', 'Paypal']);
+            $table->bigInteger('sold_quantity');
             $table->string('image')->nullable();
 
             $table->timestamps();
