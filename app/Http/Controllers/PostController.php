@@ -16,6 +16,12 @@ class PostController extends Controller
     {
         $posts = Post::all();
 
+        if ($posts->isEmpty()) {
+            return response()->json([
+                'message' => "Dammit! The posts DB is empty... Life goes on."
+            ], 404);
+        }
+
         return response()->json($posts);
     }
 
@@ -28,6 +34,12 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
+        
+        if (!$post) {
+            return response()->json([
+                'message' => "Dude, this post doesn't exist here."
+            ], 404);
+        }
 
         return response()->json($post);
     }
@@ -40,7 +52,20 @@ class PostController extends Controller
     public function getCommentsByPost($post_id)
     {
         $post = Post::find($post_id);
+
+        if (!$post) {
+            return response()->json([
+                'message' => "Dude, this post doesn't exist here."
+            ], 404);
+        }
+
         $comments = $post->comments;
+
+        if ($comments->isEmpty()) {
+            return response()->json([
+                'message' => "Dude, there are no comments for this post."
+            ], 404);
+        }
 
         return response()->json($comments);
     }

@@ -28,13 +28,6 @@ Route::group(['prefix' => 'shop'], function () {
     Route::get('/{id}', 'ProductController@show');
 });
 
-//Index retornando todos os posts -> Ver se os Comments vem no json
-//Show retornando o post por Id
-//Index retornando todos os comentarios
-//Show retornando o comentario por Id
-//Comentarios de um post
-//Comentarios por Id de um post por Id
-
 Route::group(['prefix' => 'blog'], function () {
     
     Route::group(['prefix' => 'post'], function () {
@@ -48,6 +41,6 @@ Route::group(['prefix' => 'blog'], function () {
         Route::get('/', 'CommentController@index');
 
         Route::get('/{id}', 'CommentController@show');
-        Route::get('/{post_id}/post', 'CommentController@getPostByComment');
+        Route::get('/{comment_id}/post', 'CommentController@getPostByComment');
     });
 });

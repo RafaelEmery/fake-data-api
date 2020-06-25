@@ -16,6 +16,12 @@ class CommentController extends Controller
     {
         $comments = Comment::all();
 
+        if ($comments->isEmpty()) {
+            return response()->json([
+                'message' => "Dammit! The comments DB is empty... Life goes on."
+            ], 404);
+        }
+
         return response()->json($comments);
     }
 
@@ -30,6 +36,12 @@ class CommentController extends Controller
     {
         $comment = Comment::find($id);
 
+        if (!$comment) {
+            return response()->json([
+                'message' => "Dude, this comment doesn't exist here."
+            ], 404);
+        }
+
         return response()->json($comment);
     }
 
@@ -41,6 +53,13 @@ class CommentController extends Controller
     public function getPostByComment($comment_id)
     {
         $comment = Comment::find($comment_id);
+
+        if (!$comment) {
+            return response()->json([
+                'message' => "Dude, this comment doesn't exist here."
+            ], 404);
+        }
+
         $post = $comment->post;
 
         return response()->json($post);
