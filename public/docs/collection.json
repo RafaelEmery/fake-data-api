@@ -1,0 +1,405 @@
+{
+    "variables": [],
+    "info": {
+        "name": "Laravel API",
+        "_postman_id": "af76beb0-c951-49de-a3b9-6175852a517c",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Coment\u00e1rios",
+            "description": "\nRotas para os coment\u00e1rios falsos do Banco de Dados. Os atributos foram feitos para simular um coment\u00e1rio em um blog, por isso usamos a rota \/blog. Nestas aplica\u00e7\u00f5es usamos o relacionamento OneToMany: um coment\u00e1rio possui um post.",
+            "item": [
+                {
+                    "name": "Todos os Coment\u00e1rios",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "blog\/comment",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Retorna uma listagem de todos os posts falsos do Banco de Dados. \u00c9 a rota e m\u00e9todo mais simples poss\u00edvel para esta aplica\u00e7\u00e3o. Caso o Banco de Dados esteja vazio, voc\u00ea ir\u00e1 receber uma mensagem de erro 404.",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Consulta um Coment\u00e1rio",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "blog\/comment\/:id",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "fugiat",
+                                    "description": "id do coment\u00e1rio a ser consultado"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Retorna um coment\u00e1rio de acordo com o Id passado como par\u00e2metro de URL. Caso o produto n\u00e3o exista, voc\u00ea ir\u00e1 receber uma mensagem de erro 404.",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Post por Coment\u00e1rio",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "blog\/comment\/:comment_id\/post",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "comment_id",
+                                    "key": "comment_id",
+                                    "value": "omnis",
+                                    "description": "comment_id do coment\u00e1rio a ser consultado"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Retorna um post do coment\u00e1rio feito.",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Posts",
+            "description": "\nRotas para os posts falsos do Banco de Dados. Os atributos foram feitos para simular um post em um blog, por isso usamos a rota \/blog. Nestas aplica\u00e7\u00f5es usamos o relacionamento OneToMany: um post possui v\u00e1rios coment\u00e1rios.",
+            "item": [
+                {
+                    "name": "Todos os Posts",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "blog\/post",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Retorna uma listagem de todos os posts falsos do Banco de Dados. \u00c9 a rota e m\u00e9todo mais simples poss\u00edvel para esta aplica\u00e7\u00e3o. Caso o Banco de Dados esteja vazio, voc\u00ea ir\u00e1 receber uma mensagem de erro 404.",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Consulta um Post",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "blog\/post\/:id",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "repellat",
+                                    "description": "id do post a ser consultado"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Retorna um post de acordo com o Id passado como par\u00e2metro de URL. Caso o produto n\u00e3o exista, voc\u00ea ir\u00e1 receber uma mensagem de erro 404.",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Coment\u00e1rios por Posts",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "blog\/post\/:post_id\/comment",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "post_id",
+                                    "key": "post_id",
+                                    "value": "blanditiis",
+                                    "description": "id do post a ser consultado"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Retorna uma listagem de todos os coment\u00e1rios para um post buscado. Al\u00e9m de um post talvez n\u00e3o possuir coment\u00e1rios, podem existir duas mensagens de erro 404: caso o post buscado n\u00e3o exista ou caso algum dos Banco de Dados esteja vazio.",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Produtos",
+            "description": "\nRotas para os produtos falsos do Banco de Dados. Os atributos foram feitos para simular um produto em um e-commerce, por isso usamos a rota \/shop e s\u00e3o de diversos tipos: String, Datas, Enumeradores, Booleanos, entre outros. \u00c9 importante avisar que as imagens dos produtos s\u00e3o imagens de gatos, n\u00e3o se assuste.",
+            "item": [
+                {
+                    "name": "Todos os Produtos",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "shop",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Retorna uma listagem de todos os produtos falsos do Banco de Dados. \u00c9 a rota e m\u00e9todo mais simples poss\u00edvel para esta aplica\u00e7\u00e3o. Caso o Banco de Dados esteja vazio, voc\u00ea ir\u00e1 receber uma mensagem de erro 404.",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Produtos Dispon\u00edveis",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "shop\/available",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Retorna uma listagem de todos os produtos falsos do Banco de Dados que possuem o atributo available (dispon\u00edvel) como verdadeiro. Caso o Banco de Dados esteja vazio, voc\u00ea ir\u00e1 receber uma mensagem de erro 404.",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Produtos mais Baratos",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "shop\/cheap",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Retorna uma listagem de todos os produtos falsos do Banco de Dados ordenados em ordem crescente de value (pre\u00e7o). Caso o Banco de Dados esteja vazio, voc\u00ea ir\u00e1 receber uma mensagem de erro 404.",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Produtos mais Caros",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "shop\/expensive",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Retorna uma listagem de todos os produtos falsos do Banco de Dados ordenados em ordem decrescente de value (pre\u00e7o). Caso o Banco de Dados esteja vazio, voc\u00ea ir\u00e1 receber uma mensagem de erro 404.",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Produtos mais Vendidos",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "shop\/sold",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Retorna uma listagem de todos os produtos falsos do Banco de Dados ordenados em ordem decrescente de sold_quantity (quantidade de itens vendidos). Caso o Banco de Dados esteja vazio, voc\u00ea ir\u00e1 receber uma mensagem de erro 404.",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Consulta um Produto",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "shop\/:id",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "natus",
+                                    "description": "id do produto a ser consultado"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Retorna um produto de acordo com o Id passado como par\u00e2metro de URL. Caso o produto n\u00e3o exista, voc\u00ea ir\u00e1 receber uma mensagem de erro 404.",
+                        "response": []
+                    }
+                }
+            ]
+        }
+    ]
+}

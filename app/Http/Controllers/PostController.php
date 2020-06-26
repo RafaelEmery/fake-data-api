@@ -5,12 +5,28 @@ namespace App\Http\Controllers;
 use App\Post;
 use Illuminate\Http\Request;
 
+/**
+ * @group Posts
+ * 
+ * Rotas para os posts falsos do Banco de Dados. Os atributos foram feitos para simular um post em um blog, por isso usamos a rota /blog. Nestas aplicações usamos o relacionamento OneToMany: um post possui vários comentários.
+ */
 class PostController extends Controller
 {
     /**
-     * Display a listing of all posts.
-     *
-     * @return \Illuminate\Http\Response
+     * Todos os Posts
+     * 
+     * Retorna uma listagem de todos os posts falsos do Banco de Dados. É a rota e método mais simples possível para esta aplicação. Caso o Banco de Dados esteja vazio, você irá receber uma mensagem de erro 404.
+     * 
+     * @response 200 {
+     *      "title" : "Título do post ",
+     *      "author" : "Autor do post",
+     *      "content" : "Conteúdo do post no tipo Text"
+     * }  
+     * 
+     * @response 404 {
+     *      "message" : "Dammit! The posts DB is empty... Life goes on."
+     * }
+     * 
      */
     public function index()
     {
@@ -26,10 +42,22 @@ class PostController extends Controller
     }
 
     /**
-     * Display the specified post.
-     *
-     * @param  \App\Post  $post->id
-     * @return \Illuminate\Http\Response
+     * Consulta um Post
+     * 
+     * Retorna um post de acordo com o Id passado como parâmetro de URL. Caso o produto não exista, você irá receber uma mensagem de erro 404.
+     * 
+     * @urlParam id required id do post a ser consultado
+     * 
+     * @response 200 {
+     *      "title" : "Título do post ",
+     *      "author" : "Autor do post",
+     *      "content" : "Conteúdo do post no tipo Text"
+     * }  
+     * 
+     * @response 404 {
+     *      "message" : "Dammit! The posts DB is empty... Life goes on."
+     * }
+     * 
      */
     public function show($id)
     {
@@ -45,9 +73,18 @@ class PostController extends Controller
     }
 
     /**
-     * Display a listing of comments for the specified post.
-     *
-     * @return \Illuminate\Http\Response
+     * Comentários por Posts
+     * 
+     * Retorna uma listagem de todos os comentários para um post buscado. Além de um post talvez não possuir comentários, podem existir duas mensagens de erro 404: caso o post buscado não exista ou caso algum dos Banco de Dados esteja vazio.
+     * 
+     * @urlParam post_id required id do post a ser consultado
+     * 
+     * @response 200 {
+     *      "post_id" : "Id do post comentado",
+     *      "author" : "Autor do comentário",
+     *      "content" : "Conteúdo do comentário no tipo Text"
+     * }  
+     * 
      */
     public function getCommentsByPost($post_id)
     {

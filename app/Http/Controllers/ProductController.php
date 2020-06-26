@@ -4,14 +4,33 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
-// use App\Aux\ManualErrorHandler;
 
+/**
+ * @group Produtos
+ * 
+ * Rotas para os produtos falsos do Banco de Dados. Os atributos foram feitos para simular um produto em um e-commerce, por isso usamos a rota /shop e são de diversos tipos: String, Datas, Enumeradores, Booleanos, entre outros. É importante avisar que as imagens dos produtos são imagens de gatos, não se assuste.
+ */
 class ProductController extends Controller
 {
     /**
-     * Display a listing of the products.
-     *
-     * @return \Illuminate\Http\Response
+     * Todos os Produtos
+     * 
+     * Retorna uma listagem de todos os produtos falsos do Banco de Dados. É a rota e método mais simples possível para esta aplicação. Caso o Banco de Dados esteja vazio, você irá receber uma mensagem de erro 404.
+     * 
+     * @response 200 {
+     *      "title" : "Título do produto ",
+     *      "description" : "Descrição do prodito",
+     *      "value" : "Valor em tipo Double",
+     *      "available" : "Booleano de disponibilidade do produto",
+     *      "payment_method" : "Elemento do Enum do método de pagamento",
+     *      "sold_quantity" : "Quantidade de itens vendidos em Int",
+     *      "image" : "URL da imagem do produto"
+     * }  
+     * 
+     * @response 404 {
+     *      "message" : "Dammit! The product DB is empty... Life goes on."
+     * }
+     * 
      */
     public function index()
     {
@@ -27,10 +46,25 @@ class ProductController extends Controller
     }
 
     /**
-     * Display the specified product by it's id.
-     *
-     * @param  \App\Product  $product->id
-     * @return \Illuminate\Http\Response
+     * Consulta um Produto
+     * 
+     * Retorna um produto de acordo com o Id passado como parâmetro de URL. Caso o produto não exista, você irá receber uma mensagem de erro 404.
+     * 
+     * @urlParam id required id do produto a ser consultado
+     * 
+     * @response 200 {
+     *      "title" : "Título do produto ",
+     *      "description" : "Descrição do prodito",
+     *      "value" : "Valor em tipo Double",
+     *      "available" : "Booleano de disponibilidade do produto",
+     *      "payment_method" : "Elemento do Enum do método de pagamento",
+     *      "sold_quantity" : "Quantidade de itens vendidos em Int",
+     *      "image" : "URL da imagem do produto"
+     * }    
+     * 
+     * @response 404 {
+     *      "message" : "Dude, this product doesn't exist here."
+     * }
      */
     public function show($id)
     {
@@ -46,9 +80,24 @@ class ProductController extends Controller
     }
 
     /**
-     * Display a listing of the available products.
-     *
-     * @return \Illuminate\Http\Response
+     * Produtos Disponíveis
+     * 
+     * Retorna uma listagem de todos os produtos falsos do Banco de Dados que possuem o atributo available (disponível) como verdadeiro. Caso o Banco de Dados esteja vazio, você irá receber uma mensagem de erro 404.
+     * 
+     * @response 200 {
+     *      "title" : "Título do produto ",
+     *      "description" : "Descrição do prodito",
+     *      "value" : "Valor em tipo Double",
+     *      "available" : "Booleano de disponibilidade do produto",
+     *      "payment_method" : "Elemento do Enum do método de pagamento",
+     *      "sold_quantity" : "Quantidade de itens vendidos em Int",
+     *      "image" : "URL da imagem do produto"
+     * }  
+     * 
+     * @response 404 {
+     *      "message" : "Dammit! The product DB is empty... Life goes on."
+     * }
+     * 
      */
     public function getByAvailable()
     {
@@ -63,10 +112,25 @@ class ProductController extends Controller
         return response()->json($products);
     }
 
-    /**
-     * Display a listing of all products by ascending order of value.
-     *
-     * @return \Illuminate\Http\Response
+     /**
+     * Produtos mais Baratos
+     * 
+     * Retorna uma listagem de todos os produtos falsos do Banco de Dados ordenados em ordem crescente de value (preço). Caso o Banco de Dados esteja vazio, você irá receber uma mensagem de erro 404.
+     * 
+     * @response 200 {
+     *      "title" : "Título do produto ",
+     *      "description" : "Descrição do prodito",
+     *      "value" : "Valor em tipo Double",
+     *      "available" : "Booleano de disponibilidade do produto",
+     *      "payment_method" : "Elemento do Enum do método de pagamento",
+     *      "sold_quantity" : "Quantidade de itens vendidos em Int",
+     *      "image" : "URL da imagem do produto"
+     * }  
+     * 
+     * @response 404 {
+     *      "message" : "Dammit! The product DB is empty... Life goes on."
+     * }
+     * 
      */
     public function getByCheaper()
     {
@@ -82,9 +146,24 @@ class ProductController extends Controller
     }
 
     /**
-     * Display a listing of all products by descending order of value.
-     *
-     * @return \Illuminate\Http\Response
+     * Produtos mais Caros
+     * 
+     * Retorna uma listagem de todos os produtos falsos do Banco de Dados ordenados em ordem decrescente de value (preço). Caso o Banco de Dados esteja vazio, você irá receber uma mensagem de erro 404.
+     * 
+     * @response 200 {
+     *      "title" : "Título do produto ",
+     *      "description" : "Descrição do prodito",
+     *      "value" : "Valor em tipo Double",
+     *      "available" : "Booleano de disponibilidade do produto",
+     *      "payment_method" : "Elemento do Enum do método de pagamento",
+     *      "sold_quantity" : "Quantidade de itens vendidos em Int",
+     *      "image" : "URL da imagem do produto"
+     * }  
+     * 
+     * @response 404 {
+     *      "message" : "Dammit! The product DB is empty... Life goes on."
+     * }
+     * 
      */
     public function getByMoreExpensive()
     {
@@ -100,9 +179,24 @@ class ProductController extends Controller
     }
 
     /**
-     * Display a listing of all products by descending order of value.
-     *
-     * @return \Illuminate\Http\Response
+     * Produtos mais Vendidos
+     * 
+     * Retorna uma listagem de todos os produtos falsos do Banco de Dados ordenados em ordem decrescente de sold_quantity (quantidade de itens vendidos). Caso o Banco de Dados esteja vazio, você irá receber uma mensagem de erro 404.
+     * 
+     * @response 200 {
+     *      "title" : "Título do produto ",
+     *      "description" : "Descrição do prodito",
+     *      "value" : "Valor em tipo Double",
+     *      "available" : "Booleano de disponibilidade do produto",
+     *      "payment_method" : "Elemento do Enum do método de pagamento",
+     *      "sold_quantity" : "Quantidade de itens vendidos em Int",
+     *      "image" : "URL da imagem do produto"
+     * }  
+     * 
+     * @response 404 {
+     *      "message" : "Dammit! The product DB is empty... Life goes on."
+     * }
+     * 
      */
     public function getBySoldQuantity()
     {
