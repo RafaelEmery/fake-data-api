@@ -11,15 +11,15 @@
   <title>Fake Data API</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="{{asset('template/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="template/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom fonts for this template -->
-  <link href="{{asset('/template/vendor/fontawesome-free/css/all.min.css" rel="stylesheet')}}">
-  <link href="{{asset('/template/vendor/simple-line-icons/css/simple-line-icons.css')}}" rel="stylesheet" type="text/css">
+  <link href="/template/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/template/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
   <!-- Custom styles for this template -->
-  <link href="{{asset('/template/css/landing-page.css')}}" rel="stylesheet">
+  <link href="/template/css/landing-page.css" rel="stylesheet">
 
 </head>
 
@@ -173,8 +173,8 @@
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="{{asset('/template/vendor/jquery/jquery.min.js')}}"></script>
-  <script src="{{asset('/template/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="/template/vendor/jquery/jquery.min.js"></script>
+  <script src="/template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
