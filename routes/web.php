@@ -23,10 +23,6 @@ Route::get('/deploy', function () {
     return 'Teste de rota no Heroku';
 });
 
-Route::get('/docs', function () {
-    return view('docs');
-});
-
 Route::group(['prefix' => 'shop'], function () {
     Route::get('/', 'ProductController@index');
     
