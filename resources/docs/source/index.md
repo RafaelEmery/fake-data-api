@@ -16,7 +16,7 @@ toc_footers:
 # Info
 
 Welcome to the generated API reference.
-[Get Postman Collection](http://localhost/docs/collection.json)
+[Get Postman Collection](https://rafaelemery-fake-data-api.herokuapp.com/docs/collection.json)
 
 <!-- END_INFO -->
 
@@ -33,14 +33,14 @@ Retorna uma listagem de todos os posts falsos do Banco de Dados. É a rota e mé
 
 ```bash
 curl -X GET \
-    -G "http://localhost/blog/comment" \
+    -G "https://rafaelemery-fake-data-api.herokuapp.com/blog/comment" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/blog/comment"
+    "https://rafaelemery-fake-data-api.herokuapp.com/blog/comment"
 );
 
 let headers = {
@@ -89,14 +89,14 @@ Retorna um comentário de acordo com o Id passado como parâmetro de URL. Caso o
 
 ```bash
 curl -X GET \
-    -G "http://localhost/blog/comment/fugiat" \
+    -G "https://rafaelemery-fake-data-api.herokuapp.com/blog/comment/nulla" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/blog/comment/fugiat"
+    "https://rafaelemery-fake-data-api.herokuapp.com/blog/comment/nulla"
 );
 
 let headers = {
@@ -150,14 +150,14 @@ Retorna um post do comentário feito.
 
 ```bash
 curl -X GET \
-    -G "http://localhost/blog/comment/omnis/post" \
+    -G "https://rafaelemery-fake-data-api.herokuapp.com/blog/comment/sint/post" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/blog/comment/omnis/post"
+    "https://rafaelemery-fake-data-api.herokuapp.com/blog/comment/sint/post"
 );
 
 let headers = {
@@ -208,14 +208,14 @@ Retorna uma listagem de todos os posts falsos do Banco de Dados. É a rota e mé
 
 ```bash
 curl -X GET \
-    -G "http://localhost/blog/post" \
+    -G "https://rafaelemery-fake-data-api.herokuapp.com/blog/post" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/blog/post"
+    "https://rafaelemery-fake-data-api.herokuapp.com/blog/post"
 );
 
 let headers = {
@@ -264,14 +264,14 @@ Retorna um post de acordo com o Id passado como parâmetro de URL. Caso o produt
 
 ```bash
 curl -X GET \
-    -G "http://localhost/blog/post/repellat" \
+    -G "https://rafaelemery-fake-data-api.herokuapp.com/blog/post/id" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/blog/post/repellat"
+    "https://rafaelemery-fake-data-api.herokuapp.com/blog/post/id"
 );
 
 let headers = {
@@ -325,14 +325,14 @@ Retorna uma listagem de todos os comentários para um post buscado. Além de um 
 
 ```bash
 curl -X GET \
-    -G "http://localhost/blog/post/blanditiis/comment" \
+    -G "https://rafaelemery-fake-data-api.herokuapp.com/blog/post/sunt/comment" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/blog/post/blanditiis/comment"
+    "https://rafaelemery-fake-data-api.herokuapp.com/blog/post/sunt/comment"
 );
 
 let headers = {
@@ -383,14 +383,14 @@ Retorna uma listagem de todos os produtos falsos do Banco de Dados. É a rota e 
 
 ```bash
 curl -X GET \
-    -G "http://localhost/shop" \
+    -G "https://rafaelemery-fake-data-api.herokuapp.com/shop" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/shop"
+    "https://rafaelemery-fake-data-api.herokuapp.com/shop"
 );
 
 let headers = {
@@ -443,14 +443,14 @@ Retorna uma listagem de todos os produtos falsos do Banco de Dados que possuem o
 
 ```bash
 curl -X GET \
-    -G "http://localhost/shop/available" \
+    -G "https://rafaelemery-fake-data-api.herokuapp.com/shop/available" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/shop/available"
+    "https://rafaelemery-fake-data-api.herokuapp.com/shop/available"
 );
 
 let headers = {
@@ -503,14 +503,14 @@ Retorna uma listagem de todos os produtos falsos do Banco de Dados ordenados em 
 
 ```bash
 curl -X GET \
-    -G "http://localhost/shop/cheap" \
+    -G "https://rafaelemery-fake-data-api.herokuapp.com/shop/cheap" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/shop/cheap"
+    "https://rafaelemery-fake-data-api.herokuapp.com/shop/cheap"
 );
 
 let headers = {
@@ -563,14 +563,14 @@ Retorna uma listagem de todos os produtos falsos do Banco de Dados ordenados em 
 
 ```bash
 curl -X GET \
-    -G "http://localhost/shop/expensive" \
+    -G "https://rafaelemery-fake-data-api.herokuapp.com/shop/expensive" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/shop/expensive"
+    "https://rafaelemery-fake-data-api.herokuapp.com/shop/expensive"
 );
 
 let headers = {
@@ -623,14 +623,14 @@ Retorna uma listagem de todos os produtos falsos do Banco de Dados ordenados em 
 
 ```bash
 curl -X GET \
-    -G "http://localhost/shop/sold" \
+    -G "https://rafaelemery-fake-data-api.herokuapp.com/shop/sold" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/shop/sold"
+    "https://rafaelemery-fake-data-api.herokuapp.com/shop/sold"
 );
 
 let headers = {
@@ -683,14 +683,14 @@ Retorna um produto de acordo com o Id passado como parâmetro de URL. Caso o pro
 
 ```bash
 curl -X GET \
-    -G "http://localhost/shop/natus" \
+    -G "https://rafaelemery-fake-data-api.herokuapp.com/shop/velit" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/shop/natus"
+    "https://rafaelemery-fake-data-api.herokuapp.com/shop/velit"
 );
 
 let headers = {

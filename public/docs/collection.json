@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "af76beb0-c951-49de-a3b9-6175852a517c",
+        "_postman_id": "5d4f5c8b-5f0c-486c-9d73-3698f16e1dd4",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -15,8 +15,8 @@
                     "name": "Todos os Coment\u00e1rios",
                     "request": {
                         "url": {
-                            "protocol": "http",
-                            "host": "localhost",
+                            "protocol": "https",
+                            "host": "rafaelemery-fake-data-api.herokuapp.com\/",
                             "path": "blog\/comment",
                             "query": []
                         },
@@ -43,15 +43,15 @@
                     "name": "Consulta um Coment\u00e1rio",
                     "request": {
                         "url": {
-                            "protocol": "http",
-                            "host": "localhost",
+                            "protocol": "https",
+                            "host": "rafaelemery-fake-data-api.herokuapp.com\/",
                             "path": "blog\/comment\/:id",
                             "query": [],
                             "variable": [
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "fugiat",
+                                    "value": "nulla",
                                     "description": "id do coment\u00e1rio a ser consultado"
                                 }
                             ]
@@ -79,15 +79,15 @@
                     "name": "Post por Coment\u00e1rio",
                     "request": {
                         "url": {
-                            "protocol": "http",
-                            "host": "localhost",
+                            "protocol": "https",
+                            "host": "rafaelemery-fake-data-api.herokuapp.com\/",
                             "path": "blog\/comment\/:comment_id\/post",
                             "query": [],
                             "variable": [
                                 {
                                     "id": "comment_id",
                                     "key": "comment_id",
-                                    "value": "omnis",
+                                    "value": "sint",
                                     "description": "comment_id do coment\u00e1rio a ser consultado"
                                 }
                             ]
@@ -121,8 +121,8 @@
                     "name": "Todos os Posts",
                     "request": {
                         "url": {
-                            "protocol": "http",
-                            "host": "localhost",
+                            "protocol": "https",
+                            "host": "rafaelemery-fake-data-api.herokuapp.com\/",
                             "path": "blog\/post",
                             "query": []
                         },
@@ -149,15 +149,15 @@
                     "name": "Consulta um Post",
                     "request": {
                         "url": {
-                            "protocol": "http",
-                            "host": "localhost",
+                            "protocol": "https",
+                            "host": "rafaelemery-fake-data-api.herokuapp.com\/",
                             "path": "blog\/post\/:id",
                             "query": [],
                             "variable": [
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "repellat",
+                                    "value": "id",
                                     "description": "id do post a ser consultado"
                                 }
                             ]
@@ -185,15 +185,15 @@
                     "name": "Coment\u00e1rios por Posts",
                     "request": {
                         "url": {
-                            "protocol": "http",
-                            "host": "localhost",
+                            "protocol": "https",
+                            "host": "rafaelemery-fake-data-api.herokuapp.com\/",
                             "path": "blog\/post\/:post_id\/comment",
                             "query": [],
                             "variable": [
                                 {
                                     "id": "post_id",
                                     "key": "post_id",
-                                    "value": "blanditiis",
+                                    "value": "sunt",
                                     "description": "id do post a ser consultado"
                                 }
                             ]
@@ -227,8 +227,8 @@
                     "name": "Todos os Produtos",
                     "request": {
                         "url": {
-                            "protocol": "http",
-                            "host": "localhost",
+                            "protocol": "https",
+                            "host": "rafaelemery-fake-data-api.herokuapp.com\/",
                             "path": "shop",
                             "query": []
                         },
@@ -255,8 +255,8 @@
                     "name": "Produtos Dispon\u00edveis",
                     "request": {
                         "url": {
-                            "protocol": "http",
-                            "host": "localhost",
+                            "protocol": "https",
+                            "host": "rafaelemery-fake-data-api.herokuapp.com\/",
                             "path": "shop\/available",
                             "query": []
                         },
@@ -283,8 +283,8 @@
                     "name": "Produtos mais Baratos",
                     "request": {
                         "url": {
-                            "protocol": "http",
-                            "host": "localhost",
+                            "protocol": "https",
+                            "host": "rafaelemery-fake-data-api.herokuapp.com\/",
                             "path": "shop\/cheap",
                             "query": []
                         },
@@ -311,8 +311,8 @@
                     "name": "Produtos mais Caros",
                     "request": {
                         "url": {
-                            "protocol": "http",
-                            "host": "localhost",
+                            "protocol": "https",
+                            "host": "rafaelemery-fake-data-api.herokuapp.com\/",
                             "path": "shop\/expensive",
                             "query": []
                         },
@@ -339,8 +339,8 @@
                     "name": "Produtos mais Vendidos",
                     "request": {
                         "url": {
-                            "protocol": "http",
-                            "host": "localhost",
+                            "protocol": "https",
+                            "host": "rafaelemery-fake-data-api.herokuapp.com\/",
                             "path": "shop\/sold",
                             "query": []
                         },
@@ -367,15 +367,15 @@
                     "name": "Consulta um Produto",
                     "request": {
                         "url": {
-                            "protocol": "http",
-                            "host": "localhost",
+                            "protocol": "https",
+                            "host": "rafaelemery-fake-data-api.herokuapp.com\/",
                             "path": "shop\/:id",
                             "query": [],
                             "variable": [
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "natus",
+                                    "value": "velit",
                                     "description": "id do produto a ser consultado"
                                 }
                             ]
