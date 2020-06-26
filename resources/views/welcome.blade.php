@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Teste no Heroku
                 </div>
 
                 <div class="links">
