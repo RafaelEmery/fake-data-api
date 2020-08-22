@@ -6,7 +6,7 @@ The application's language is **portuguese (pt-BR)**.
 
 ### Data types
 
-![](/readme-src/data-stuff.png)
+![](/assets/data-stuff.png)
 
 ### About
 
@@ -15,6 +15,7 @@ The original objetive is having a simple application to study about REST APIs an
 Personally, i use it in Laravel and Javascript projects for testing functions, packages and front end desingn. In the Laravel projects, i don't have to worry about coding a full CRUD just for testing some features!
 
 ### Technologies
+
 - [X] Laravel 7
 - [X] Bootstrap 4 
 - [X] PostgreSQL
@@ -30,5 +31,5 @@ Check it out at the [Fake Data API Docs](https://rafaelemery-fake-data-api.herok
 
 You can quickly test the GET requests at the **index page's footer**. Check it:
 
-![](/readme-src/footer.png)
+![](/assets/footer.png)
 

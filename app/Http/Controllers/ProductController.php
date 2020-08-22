@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Http\Requests\ProductRequest;
+
 use Illuminate\Http\Request;
 
 /**
@@ -43,6 +45,52 @@ class ProductController extends Controller
         }
 
         return response()->json($products);
+    }
+
+    /**
+     * Criar um produto
+     * 
+     * Cria uma entidade de produto, com as informações passadas como parâmetro no corpo da requisição
+     * 
+     * @response 200 {
+     *      "message": "Product created!"
+     * }  
+     * 
+     * @response 404 {
+     *      "message" : "Dammit! The product DB is empty... Life goes on."
+     * }
+     * 
+     */
+    public function store(ProductRequest $request)
+    {
+        $data = $request->all();
+        $product = Product::create($data);
+
+        if($product->isEmpty()) {
+            return response()->json([
+                'message' => "Something is wrong with the creation!"
+            ], 404);
+        }
+
+        return response()->json([
+            'message' => "Product created!"
+        ], 200);
+    }
+
+    //Testing version with trycatch block
+    public function alternateStore(ProductRequest $request) 
+    {
+        try {
+            Product::create($request->all());
+
+            return response()->json([
+                'message' => "Product created!"
+            ], 200); 
+        } catch (\Throwable $th) {
+            return response()->json([
+                'message' => "Something is wrong with the creation!"
+            ], 404);
+        }
     }
 
     /**

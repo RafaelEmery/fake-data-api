@@ -96,7 +96,7 @@
       <div class="row no-gutters">
         <div class="col-lg-6 text-white showcase-img" style="background-image: url('/template/img/bg-rest.jpg');"></div>
         <div class="col-lg-6 my-auto showcase-text">
-          <h2>Padrão REST</h2>
+          <h2>RESTful</h2>
           <p class="lead mb-0">
               Feita com base no <i>Representational State Transfer</i> (REST), onde seguiremos o protocolo HTTP com quatro métodos básicos:
               GET, POST, PUT, DELETE. Por enquanto, somente as requisições do tipo GET funcionam.
